@@ -212,10 +212,10 @@ export default function About() {
                         </Text>
                       ))}
                     </Column>
-                    {experience.images.length > 0 && (
+                    {experience.images && experience.images.length > 0 && (
                       <Flex className={styles.experienceImages} fillWidth paddingTop="m" gap="12" wrap>
-                        {experience.images.map((image, index) => {
-                          const isLogo = "kind" in image && image.kind === "logo";
+                        {(experience.images as Array<{ src: string; alt?: string; width?: number; height?: number; kind?: string }>).map((image, index) => {
+                          const isLogo = image.kind === "logo";
                           if (isLogo) {
                             return (
                               <Flex key={index} padding="8" background="transparent">
@@ -240,19 +240,14 @@ export default function About() {
                               key={index}
                               border="neutral-medium"
                               radius="m"
-                              //@ts-ignore
                               minWidth={image.width}
-                              //@ts-ignore
                               height={image.height}
                             >
                               <Media
                                 enlarge
                                 radius="m"
-                                //@ts-ignore
-                                sizes={image.width.toString()}
-                                //@ts-ignore
+                                sizes={image.width?.toString()}
                                 alt={image.alt}
-                                //@ts-ignore
                                 src={image.src}
                               />
                             </Flex>
