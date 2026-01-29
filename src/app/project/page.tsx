@@ -141,25 +141,38 @@ export default function Project() {
                     </Column>
                   ))}
                 </Flex>
-                {featuredProject.link && (
-                  <Button
-                    variant="primary"
-                    size="m"
-                    href={featuredProject.link ?? undefined}
-                    prefixIcon="externalLink"
-                    style={{ width: "fit-content" }}
-                  >
-                    View Project
-                  </Button>
-                )}
+                <Flex gap="8" wrap>
+                  {featuredProject.caseStudyLink && (
+                    <Button
+                      variant="secondary"
+                      size="m"
+                      href={featuredProject.caseStudyLink}
+                      prefixIcon="book"
+                      style={{ flex: "1 1 auto" }}
+                    >
+                      Case Study
+                    </Button>
+                  )}
+                  {featuredProject.link && (
+                    <Button
+                      variant="primary"
+                      size="m"
+                      href={featuredProject.link}
+                      prefixIcon="globe"
+                      style={{ flex: "1 1 auto" }}
+                    >
+                      Live Project
+                    </Button>
+                  )}
+                </Flex>
               </Column>
             </Column>
           </RevealFx>
         )}
 
-        {/* Projects Grid */}
+        {/* Projects Grid - Hide featured project from grid */}
         <Flex className="projects-grid" gap="m" wrap fillWidth>
-          {filteredProjects.map((project, index) => {
+          {filteredProjects.filter(p => !p.featured).map((project, index) => {
             const isApex = project.title === "Apex Motion Website";
             return (
             <RevealFx key={index} translateY="8" delay={0.3 + index * 0.05} fillWidth>
