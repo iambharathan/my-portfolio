@@ -7,7 +7,7 @@ import { slideUp, opacity } from "./animation";
 
 export const WhatIDoSection = () => {
   const phrase =
-    "I build intelligent digital systems — from full-stack platforms to applied AI solutions.";
+    "I build reliable digital systems — from cloud-native applications to automated DevOps pipelines.";
   const description = useRef<HTMLDivElement | null>(null);
   const plane = useRef<HTMLDivElement | null>(null);
   const frame = useRef<number | null>(null);
@@ -63,7 +63,7 @@ export const WhatIDoSection = () => {
               ))}
             </p>
             <motion.p variants={opacity} animate={isInView ? "open" : "closed"}>
-              I care about structure, speed, and building things that actually last.
+              I care about system design, automation, scalability, and building infrastructure that actually lasts.
             </motion.p>
           </div>
           <div

@@ -1,16 +1,16 @@
 import { Logo } from "@once-ui-system/core";
 
 const person = {
-  firstName: "Alan Chris ",
-  lastName: "Dsilva",
+  firstName: "BHARATHAN",
+  lastName: "K",
   get name() {
     return `${this.firstName} ${this.lastName}`;
   },
-  role: "Software Engineer",
+  role: "Cloud DevOps Engineer",
   avatar: "/images/avatar.jpg",
-  email: "alanchrisdisilva@gmail.com",
+  email: "bharathanmoorthy@outlook.com",
   location: "India", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Malayalam","Hindi","tamil","arabic"], // optional: Leave the array empty if you don't want to display languages
+  languages: ["English", "Tamil", "Telugu"], // optional: Leave the array empty if you don't want to display languages
 };
 
 const newsletter = {
@@ -30,12 +30,12 @@ const social = [
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/alan61503",
+    link: "https://github.com/iambharathan",
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/in/alan-chris-disilva/",
+    link: "https://www.linkedin.com/in/bharathan-k-094894283/",
   },
   
   {
@@ -51,7 +51,7 @@ const home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Hi, I&apos;m Alan — Full Stack Developer & AIML Specialist</>,
+  headline: <>Hi, I&apos;m BHARATHAN — Cloud DevOps Engineer</>,
   featured: {
     display: false,
     title: <>Recent project: <strong className="ml-4">PDF Splitter</strong></>,
@@ -59,8 +59,8 @@ const home = {
   },
   subline: (
     <>
-      I&apos;m Alan, a software engineer at <b>Christ (Deemed to be University)</b>, where I craft intuitive
-      <br />powerful digital products that merge intelligence with design. Let&apos;s create something impactful.
+      I&apos;m BHARATHAN, a Cloud DevOps Engineer passionate about building scalable infrastructure,
+      <br />automating deployments, and optimizing cloud architecture. Let&apos;s build something reliable.
     </>
   ),
 };
@@ -97,64 +97,24 @@ const about = {
     title: "Work Experience",
     experiences: [
       {
-        company: "Apex Motion",
-        timeframe: "2025 April - Present",
-        role: "Web Technology Lead",
+        company: "ApexPlanet Software Pvt. Ltd.",
+        timeframe: "April 2025 – May 2025",
+        role: "Web Development Intern",
         achievements: [
           <>
-            Architected, designed, and built the entire apexmotion.in platform, owning both the front-end experience and supporting infrastructure.
+            Completed 10+ structured web development tasks as part of a guided remote internship program.
           </>,
           <>
-            Lead the ongoing roadmap for performance, accessibility, and deployment automation so new initiatives ship in hours instead of days.
+            Developed and enhanced 5+ responsive web pages using HTML, CSS, and JavaScript.
           </>,
           <>
-            Partner with design, marketing, and leadership to convert business briefs into data-backed product releases.
-          </>,
-        ],
-        images: [
-          {
-            src: "/images/apex.png",
-            alt: "Apex Motion logo",
-            width: 16,
-            height: 9,
-            kind: "logo",
-          },
-        ],
-      },
-      {
-        company: "Matrix BMS Technologies",
-        timeframe: "2024 April - June",
-        role: "SDE",
-        achievements: [
-          <>
-            system Integration Test   
+            Implemented client-side features including forms, validations, and reusable UI components based on provided specifications.
           </>,
           <>
-            - Involved in UAT
+            Debugged and improved frontend logic across multiple task modules to ensure functional correctness and usability.
           </>,
           <>
-          - Developing Forms in our No/Low Code Application</>
-        ],
-        images: [
-          // optional: leave the array empty if you don't want to display images
-          {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
-            width: 16,
-            height: 9,
-          },
-        ],
-      },
-      {
-        company: "Center of Excellence in E-Mobility",
-        timeframe: "2025 june - present",
-        role: "Software Engineer",
-        achievements: [
-          <>
-            built a fullstack website for a company that provides solutions for electric vehicle charging infrastructure.
-          </>,
-          <>
-            currently developing a fullstack application for a company and doing research
+            Worked in a 100% remote setup, following defined workflows, deadlines, and submission standards, strengthening disciplined execution.
           </>,
         ],
         images: [],

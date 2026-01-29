@@ -3,7 +3,7 @@
 import styles from "./SkillsMarquee.module.scss";
 
 const skillsLine =
-  "• Languages  JavaScript  TypeScript  Python  Java  C++  HTML/CSS  • Frameworks/Libraries  React  Next.js  Node.js  Express  TensorFlow  PyTorch  • Tools/Platforms  Git  Docker  AWS  Figma  Vercel  Linux";
+  "• LINUX   AWS   CI/CD   GITHUB ACTIONS   JENKINS   TERRAFORM   KUBERNETES   DOCKER   ANSIBLE   PYTHON   BASH   GIT   AZURE   GCP   PROMETHEUS   GRAFANA   ELK STACK";
 
 export const SkillsMarquee = () => {
   return (

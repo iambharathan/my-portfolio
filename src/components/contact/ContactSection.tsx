@@ -74,10 +74,10 @@ export const ContactSection = () => {
         </div>
         <div className={styles.nav}>
           <div className={styles.button}>
-            <p>alanchrisdisilva@gmail.com</p>
+            <p>bharathanmoorthy@outlook.com</p>
           </div>
           <div className={styles.button}>
-            <p>+91 7558864498</p>
+            <p>+91 6384322105</p>
           </div>
         </div>
       </motion.div>

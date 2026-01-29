@@ -10,112 +10,16 @@ export default function Project() {
 
   const projects = [
     {
-      title: "Efficient Pathfinding in a Maze Using BFS",
-      category: "ai",
+      title: "NeedARoomie",
+      category: "fullstack",
       description:
-        "IEEE CSNT 2025 publication showcasing a Breadth-First Search pipeline for dependable robotic navigation in complex mazes.",
-      image: "/images/path.png",
-      tags: ["BFS", "Robotics", "AI/ML", "Research"],
-      stats: { accuracy: "Shortest path", latency: "<120ms", scope: "40x40 grids" },
-      link: "/work/efficient-pathfinding-in-a-maze-using-breadth-first-search",
+        "A full-stack platform that automates room and roommate discovery for students and professionals. Built with structured workflows for profile creation, verification, matching, and communication, powered by database triggers and event-driven email automation, and designed to scale across cities and organizations.",
+      image: "/images/needaroomie.png",
+      tags: ["Next.js", "Full-Stack", "Database", "Automation"],
+      stats: { workflow: "End-to-end", automation: "Email triggers", scale: "Multi-city" },
+      link: "https://needaroomie.com",
+      caseStudyLink: "/work/needaroomie-case-study", // You'll create this later
       featured: true,
-    },
-    {
-      title: "Digital Twin for Electric Two-Wheelers",
-      category: "ai",
-      description:
-        "ICVTTS 25 research blending ESP32 telemetry, ThingSpeak IoT dashboards, and AR overlays for live battery insights on campus fleets.",
-      image: "/images/digital.png",
-      tags: ["Digital Twin", "IoT", "Augmented Reality", "Battery"],
-      stats: { soc: "<2% error", sync: "<1s", riders: "60 km field" },
-      link: "/work/digital-twinning-electric-two-wheeler",
-      featured: true,
-    },
-    {
-      title: "Trust Guard – AI Browser Extension",
-      category: "ai",
-      description:
-        "Security-first Chrome extension that uses BERT, CLIP, and Wav2Vec2 models to flag phishing text, deceptive visuals, and unsafe audio in real time.",
-      image: "/images/trust.png",
-      tags: ["Security", "AI", "Chrome Extension"],
-      stats: { accuracy: "94% catches", latency: "<150ms", stack: "Python + JS" },
-      link: "/work/trust-guard-ai-browser-extension",
-      featured: true,
-    },
-    {
-      title: "YOLOv8 Garbage Overflow Detection",
-      category: "ai",
-      description:
-        "Computer-vision system that monitors city bins via webcams or IP cameras, runs YOLOv8, and alerts crews before trash spills over.",
-      image: "/images/eco.png",
-      tags: ["YOLOv8", "Computer Vision", "Smart Cities"],
-      stats: { precision: ">92%", feeds: "RTSP/Webcam", stack: "Python" },
-      link: "/work/garbage-overflow-detection-yolov8",
-      featured: true,
-    },
-    {
-      title: "AI-Powered Misinformation Agent",
-      category: "ai",
-      description:
-        "Kaspersky hackathon project that unifies BART, CLIP, and Whisper checks to judge text, images, and audio for misinformation in one dashboard.",
-      image: "/images/kaspersky.png",
-      tags: ["Security", "Multimodal AI", "Hackathon"],
-      stats: { modalities: "3 formats", verdict: "Unified score", stack: "FastAPI" },
-      link: "/work/ai-powered-misinformation-detection-agent",
-      featured: true,
-    },
-    {
-      title: "SAP Vibeathon Event Platform",
-      category: "web",
-      description:
-        "Full-stack registration system for SAP Inside Track Vibeathon with dual flows, Supabase RLS auth, and live dashboards.",
-      image: "/images/SAP.png",
-      tags: ["Next.js", "Supabase", "Tailwind"],
-      stats: { flows: "2 journeys", auth: "RLS", deploy: "Vercel" },
-      link: "/work/sap-vibeathon-event-registration-platform",
-      featured: true,
-    },
-    {
-      title: "PDF Splitter – Smart Printing",
-      category: "web",
-      description:
-        "Splitter automates color-aware PDF prep so students and professionals can upload once, get duplex-friendly outputs, and keep printing stress-free.",
-      image: "/images/splitter.png",
-      tags: ["Next.js", "React", "Tailwind"],
-      stats: { uploads: "50MB files", savings: "30% ink", time: "<10s runs" },
-      link: "/work/pdf-divider-smart-printing",
-      featured: true,
-    },
-    {
-      title: "Apex Motion Website",
-      category: "web",
-      description:
-        "Designed and shipped apexmotion.in end-to-end — a lightning-fast marketing site with a headless CMS, case-study builder, analytics dashboards, and automated deployments for the Apex Motion studio.",
-      image: "/images/apex.png",
-      tags: ["Next.js", "React", "TypeScript", "UI/UX"],
-      stats: { performance: "100%", users: "10K+", time: "3 months" },
-      link: "https://apexmotion.in",
-      featured: true,
-    },
-    {
-      title: "Once UI Design System",
-      category: "design",
-      description: "Comprehensive component library with 50+ components and dark mode support",
-      image: "/images/projects/project-01/cover-03.jpg",
-      tags: ["React", "TypeScript", "Design System"],
-      stats: { stars: "500+", users: "1K+", components: "50+" },
-      link: "https://github.com/once-ui-system",
-      featured: true,
-    },
-    {
-      title: "AI-Powered Traffic Optimizer",
-      category: "ai",
-      description: "Machine learning solution for real-time traffic optimization and prediction",
-      image: "/images/traffic.png",
-      tags: ["Python", "TensorFlow", "ML", "Real-time"],
-      stats: { accuracy: "95%", reduced: "40%", coverage: "5 cities" },
-      link: null,
-      featured: false,
     },
   ];
 
@@ -337,17 +241,30 @@ export default function Project() {
                 </Flex>
 
                 {/* CTA */}
-                {project.link && (
-                  <Button
-                    variant="secondary"
-                    size="s"
-                    href={project.link}
-                    prefixIcon="arrowRight"
-                    style={{ width: "100%" }}
-                  >
-                    View Details
-                  </Button>
-                )}
+                <Flex gap="8" wrap>
+                  {project.caseStudyLink && (
+                    <Button
+                      variant="secondary"
+                      size="s"
+                      href={project.caseStudyLink}
+                      prefixIcon="book"
+                      style={{ flex: "1 1 auto" }}
+                    >
+                      Case Study
+                    </Button>
+                  )}
+                  {project.link && (
+                    <Button
+                      variant="primary"
+                      size="s"
+                      href={project.link}
+                      prefixIcon="globe"
+                      style={{ flex: "1 1 auto" }}
+                    >
+                      Live Project
+                    </Button>
+                  )}
+                </Flex>
               </Column>
             </RevealFx>
           )})}
