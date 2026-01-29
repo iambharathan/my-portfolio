@@ -4,6 +4,7 @@ publishedAt: "2025-10-01"
 summary: "A full-stack web platform designed to simplify how students and working professionals find rooms and compatible roommates."
 images:
   - "/images/needaroomie.png"
+link: "https://needaroomie.com"
 team:
   - name: "BHARATHAN K"
     role: "Full-Stack Developer"
@@ -11,13 +12,48 @@ team:
     linkedIn: "https://www.linkedin.com/in/bharathan-k-094894283/"
 ---
 
+<Grid columns="3" mobileColumns="1" gap="16" marginTop="24" marginBottom="32">
+  <Card padding="24" radius="l">
+    <Row gap="12" vertical="center">
+      <Icon name="clock" size="l" onBackground="brand-medium" />
+      <Column gap="2">
+        <Text variant="label-default-s" onBackground="neutral-weak">Timeline</Text>
+        <Text variant="heading-strong-s">8 Weeks</Text>
+      </Column>
+    </Row>
+  </Card>
+  <Card padding="24" radius="l">
+    <Row gap="12" vertical="center">
+      <Icon name="code" size="l" onBackground="brand-medium" />
+      <Column gap="2">
+        <Text variant="label-default-s" onBackground="neutral-weak">Role</Text>
+        <Text variant="heading-strong-s">Full-Stack Dev</Text>
+      </Column>
+    </Row>
+  </Card>
+  <Card padding="24" radius="l">
+    <Row gap="12" vertical="center">
+      <Icon name="circleCheck" size="l" onBackground="success-medium" />
+      <Column gap="2">
+        <Text variant="label-default-s" onBackground="neutral-weak">Status</Text>
+        <Text variant="heading-strong-s">Live</Text>
+      </Column>
+    </Row>
+  </Card>
+</Grid>
+
 ## Project Overview
 
 NeedARoomie is a production-grade web platform that streamlines room and roommate discovery for students and working professionals. The system addresses critical pain points in the rental market—fragmented listings, trust issues, and verification gaps—through location-aware search, authenticated user profiles, and structured matching algorithms.
 
-**Timeline:** October 2025  
-**Role:** Full-Stack Developer  
-**Status:** Live Production
+<Row gap="12" marginTop="16" marginBottom="16" wrap>
+  <Button href="https://needaroomie.com" variant="primary" size="m" prefixIcon="globe">
+    Visit Live Site
+  </Button>
+  <Button href="mailto:bharathanmoorthy@outlook.com" variant="secondary" size="m" prefixIcon="email">
+    Contact for Details
+  </Button>
+</Row>
 
 ### Platform Architecture
 
@@ -29,22 +65,63 @@ The platform implements two distinct user workflows: room discovery and listing 
 
 The current rental discovery process presents significant operational friction:
 
-**Fragmented Information Flow**  
-Listings scattered across WhatsApp groups, broker networks, and generic real-estate platforms create information silos and inefficient search processes.
-
-**Verification Gap**  
-Absence of standardized verification mechanisms results in high spam rates and fraudulent listings, eroding platform trust.
-
-**Poor Mobile Experience**  
-Existing solutions lack mobile-optimized interfaces, critical for the target demographic of students and first-time renters.
-
-**Compatibility Matching**  
-No systematic approach to filter by organizational affiliation, lifestyle preferences, or compatibility metrics.
-
+<Grid columns="2" mobileColumns="1" gap="16" marginTop="16" marginBottom="24">
+  <Card padding="32" radius="l" fillWidth>
+    <Column gap="12">
+      <Icon name="layers" size="l" onBackground="danger-medium" />
+      <Text variant="heading-strong-m">Fragmented Information Flow</Text>
+      <Text variant="body-default-s" onBackground="neutral-medium">Listings scattered across WhatsApp groups, broker networks, and generic real-estate platforms create information silos and inefficient search processes.</Text>
+    </Column>
+  </Card>
+  <Card padding="32" radius="l" fillWidth>
+    <Column gap="12">
+      <Icon name="shield" size="l" onBackground="danger-medium" />
+      <Text variant="heading-strong-m">Verification Gap</Text>
+      <Text variant="body-default-s" onBackground="neutral-medium">Absence of standardized verification mechanisms results in high spam rates and fraudulent listings, eroding platform trust.</Text>
+    </Column>
+  </Card>
+  <Card padding="32" radius="l" fillWidth>
+    <Column gap="12">
+      <Icon name="smartphone" size="l" onBackground="danger-medium" />
+      <Text variant="heading-strong-m">Poor Mobile Experience</Text>
+      <Text variant="body-default-s" onBackground="neutral-medium">Existing solutions lack mobile-optimized interfaces, critical for the target demographic of students and first-time renters.</Text>
+    </Column>
+  </Card>
+  <Card padding="32" radius="l" fillWidth>
+    <Column gap="12">
+      <Icon name="users" size="l" onBackground="danger-medium" />
+      <Text variant="heading-strong-m">Compatibility Matching</Text>
+      <Text variant="body-default-s" onBackground="neutral-medium">No systematic approach to filter by organizational affiliation, lifestyle preferences, or compatibility metrics.</Text>
+    </Column>
+  </Card>
+</Grid>
 
 ---
 
 ## Solution Architecture
+
+<Card padding="32" radius="l" marginTop="16" marginBottom="16" fillWidth>
+  <Column gap="16">
+    <Row gap="12" vertical="center">
+      <Icon name="shield" size="l" onBackground="brand-medium" />
+      <Text variant="heading-strong-m">Multi-Factor Authentication</Text>
+    </Row>
+    <Grid columns="3" mobileColumns="1" gap="16">
+      <Column gap="8">
+        <Text variant="heading-strong-s">Google OAuth</Text>
+        <Text variant="body-default-s" onBackground="neutral-medium">Streamlined authentication</Text>
+      </Column>
+      <Column gap="8">
+        <Text variant="heading-strong-s">Phone Verification</Text>
+        <Text variant="body-default-s" onBackground="neutral-medium">Firebase OTP integration</Text>
+      </Column>
+      <Column gap="8">
+        <Text variant="heading-strong-s">Row Level Security</Text>
+        <Text variant="body-default-s" onBackground="neutral-medium">Supabase RLS policies</Text>
+      </Column>
+    </Grid>
+  </Column>
+</Card>
 
 ### Dual User Workflow System
 
@@ -54,92 +131,180 @@ Users initiate searches via Google Places Autocomplete with location-aware filte
 **Listing Management Flow**  
 Authenticated users access a dashboard interface for posting room listings with structured data fields: rent, deposit, occupancy rules, gender preferences, and tenant profiles. All listings support image uploads and real-time editing capabilities.
 
-### Authentication & Security Layer
-
-**Multi-Factor Verification**
-- Google OAuth integration for streamlined authentication
-- Phone number verification via Firebase to prevent account abuse
-- Supabase Auth with Row Level Security (RLS) for data isolation
-
-**Data Access Control**  
-Row-level policies ensure users can only access and modify their own data, eliminating the need for complex permission logic at the application layer.
-
 ### Freemium Access Control
 
-**Usage-Based Tier System**  
-Free, Basic, and Premium tiers with server-enforced limits on:
-- Active listing slots
-- Room view quotas
-- Roommate profile access
-
-Backend tracking prevents client-side limit bypassing, ensuring monetization integrity.
+<Card padding="32" radius="l" marginTop="16" marginBottom="16">
+  <Column gap="16">
+    <Row gap="12" vertical="center">
+      <Icon name="creditCard" size="l" onBackground="brand-medium" />
+      <Text variant="heading-strong-m">Usage-Based Tier System</Text>
+    </Row>
+    <Text variant="body-default-s" onBackground="neutral-medium">Free, Basic, and Premium tiers with server-enforced limits:</Text>
+    <Grid columns="3" mobileColumns="1" gap="16">
+      <Column gap="8">
+        <Text variant="heading-strong-m">Free Tier</Text>
+        <Text variant="body-default-s">• 1 Active listing</Text>
+        <Text variant="body-default-s">• 10 Room views/day</Text>
+        <Text variant="body-default-s">• Limited profile access</Text>
+      </Column>
+      <Column gap="8">
+        <Text variant="heading-strong-m">Basic Tier</Text>
+        <Text variant="body-default-s">• 5 Active listings</Text>
+        <Text variant="body-default-s">• 50 Room views/day</Text>
+        <Text variant="body-default-s">• Full profile access</Text>
+      </Column>
+      <Column gap="8">
+        <Text variant="heading-strong-m">Premium Tier</Text>
+        <Text variant="body-default-s">• Unlimited listings</Text>
+        <Text variant="body-default-s">• Unlimited views</Text>
+        <Text variant="body-default-s">• Priority support</Text>
+      </Column>
+    </Grid>
+    <Text variant="body-default-s" onBackground="neutral-weak">Backend tracking prevents client-side limit bypassing, ensuring monetization integrity.</Text>
+  </Column>
+</Card>
 
 ### Location Intelligence
 
-**Geographic Search System**
-- Google Maps & Places API for address validation
-- Latitude/longitude storage for each listing
-- Distance-based filtering for proximity search
-- Neighborhood and organization-specific discovery
+<Card padding="32" radius="l" marginTop="16" marginBottom="16">
+  <Column gap="16">
+    <Row gap="12" vertical="center">
+      <Icon name="mapPin" size="l" onBackground="brand-medium" />
+      <Text variant="heading-strong-m">Geographic Search System</Text>
+    </Row>
+    <Grid columns="2" mobileColumns="1" gap="12">
+      <Text variant="body-default-s" onBackground="neutral-medium">Google Maps & Places API for address validation</Text>
+      <Text variant="body-default-s" onBackground="neutral-medium">Latitude/longitude storage for each listing</Text>
+      <Text variant="body-default-s" onBackground="neutral-medium">Distance-based filtering for proximity search</Text>
+      <Text variant="body-default-s" onBackground="neutral-medium">Neighborhood and organization-specific discovery</Text>
+    </Grid>
+  </Column>
+</Card>
 
 ### UI/UX Implementation
 
-**Design Principles**
-- Dark-first minimal interface with theme toggle
-- Floating navigation with smooth state transitions
-- Motion-enhanced interactions for engagement
-- Mobile-first responsive design optimized for iOS Safari
-- Reduced animation for users with motion sensitivity preferences
+<Card padding="32" radius="l" marginTop="16" marginBottom="16">
+  <Column gap="16">
+    <Row gap="12" vertical="center">
+      <Icon name="layout" size="l" onBackground="brand-medium" />
+      <Text variant="heading-strong-m">Design Principles</Text>
+    </Row>
+    <Grid columns="2" mobileColumns="1" gap="12">
+      <Text variant="body-default-s" onBackground="neutral-medium">Dark-first minimal interface with theme toggle</Text>
+      <Text variant="body-default-s" onBackground="neutral-medium">Floating navigation with smooth state transitions</Text>
+      <Text variant="body-default-s" onBackground="neutral-medium">Motion-enhanced interactions for engagement</Text>
+      <Text variant="body-default-s" onBackground="neutral-medium">Mobile-first responsive design optimized for iOS Safari</Text>
+    </Grid>
+  </Column>
+</Card>
 
 ### Performance Optimization
 
-**Technical Optimizations**
-- Query optimization with pagination and lazy loading
-- Image compression and adaptive loading for bandwidth efficiency
-- Environment-based configuration for secure API key management
-- Server-side rendering for improved initial load times
-
----
+<Card padding="32" radius="l" marginTop="16" marginBottom="24">
+  <Column gap="16">
+    <Row gap="12" vertical="center">
+      <Icon name="zap" size="l" onBackground="brand-medium" />
+      <Text variant="heading-strong-m">Technical Optimizations</Text>
+    </Row>
+    <Grid columns="2" mobileColumns="1" gap="12">
+      <Text variant="body-default-s" onBackground="neutral-medium">Query optimization with pagination and lazy loading</Text>
+      <Text variant="body-default-s" onBackground="neutral-medium">Image compression and adaptive loading</Text>
+      <Text variant="body-default-s" onBackground="neutral-medium">Environment-based configuration for secure API key management</Text>
+      <Text variant="body-default-s" onBackground="neutral-medium">Server-side rendering for improved initial load times</Text>
+    </Grid>
+  </Column>
+</Card>
 
 ---
 
 ## Technical Stack
 
-### Frontend Layer
-```
-Next.js — React framework with SSR/SSG capabilities
-React — Component-based UI architecture
-TypeScript — Type-safe development environment
-Tailwind CSS — Utility-first styling framework
-Framer Motion — Animation and gesture library
-```
-
-### Backend Infrastructure
-```
-Supabase PostgreSQL — Relational database with RLS
-Supabase Auth — Authentication and user management
-Supabase Storage — Image and file storage system
-API Routes — Serverless backend functions
-```
-
-### External Services
-```
-Google Maps API — Location search and geocoding
-Google Places API — Address autocomplete
-Firebase — Phone number verification
-Razorpay — Payment processing (planned)
-```
-
-### Deployment & DevOps
-```
-Vercel — Hosting and continuous deployment
-GitHub — Version control and collaboration
-Cloudflare — DNS management and security layer
-```
+<Grid columns="2" mobileColumns="1" gap="16" marginTop="16" marginBottom="24">
+  <Card padding="32" radius="l" fillWidth>
+    <Column gap="16" fillWidth>
+      <Row gap="12" vertical="center">
+        <Icon name="palette" size="l" onBackground="brand-medium" />
+        <Text variant="heading-strong-m">Frontend</Text>
+      </Row>
+      <Column gap="8">
+        <Text variant="body-default-s" onBackground="neutral-medium">Next.js — SSR/SSG Framework</Text>
+        <Text variant="body-default-s" onBackground="neutral-medium">React — Component-based UI</Text>
+        <Text variant="body-default-s" onBackground="neutral-medium">TypeScript — Type-safe Development</Text>
+        <Text variant="body-default-s" onBackground="neutral-medium">Tailwind CSS — Utility-first Styling</Text>
+        <Text variant="body-default-s" onBackground="neutral-medium">Framer Motion — Animations</Text>
+      </Column>
+    </Column>
+  </Card>
+  <Card padding="32" radius="l" fillWidth>
+    <Column gap="16" fillWidth>
+      <Row gap="12" vertical="center">
+        <Icon name="database" size="l" onBackground="brand-medium" />
+        <Text variant="heading-strong-m">Backend</Text>
+      </Row>
+      <Column gap="8">
+        <Text variant="body-default-s" onBackground="neutral-medium">Supabase PostgreSQL — Database with RLS</Text>
+        <Text variant="body-default-s" onBackground="neutral-medium">Supabase Auth — User Management</Text>
+        <Text variant="body-default-s" onBackground="neutral-medium">Supabase Storage — File Storage</Text>
+        <Text variant="body-default-s" onBackground="neutral-medium">API Routes — Serverless Functions</Text>
+      </Column>
+    </Column>
+  </Card>
+  <Card padding="32" radius="l" fillWidth>
+    <Column gap="16" fillWidth>
+      <Row gap="12" vertical="center">
+        <Icon name="cloud" size="l" onBackground="brand-medium" />
+        <Text variant="heading-strong-m">External Services</Text>
+      </Row>
+      <Column gap="8">
+        <Text variant="body-default-s" onBackground="neutral-medium">Google Maps API — Location Search</Text>
+        <Text variant="body-default-s" onBackground="neutral-medium">Google Places API — Address Autocomplete</Text>
+        <Text variant="body-default-s" onBackground="neutral-medium">Firebase — Phone Number Verification</Text>
+        <Text variant="body-default-s" onBackground="neutral-medium">Razorpay — Payment Processing (planned)</Text>
+      </Column>
+    </Column>
+  </Card>
+  <Card padding="32" radius="l" fillWidth>
+    <Column gap="16" fillWidth>
+      <Row gap="12" vertical="center">
+        <Icon name="rocket" size="l" onBackground="brand-medium" />
+        <Text variant="heading-strong-m">Deployment</Text>
+      </Row>
+      <Column gap="8">
+        <Text variant="body-default-s" onBackground="neutral-medium">Vercel — Hosting & CI/CD</Text>
+        <Text variant="body-default-s" onBackground="neutral-medium">GitHub — Version Control</Text>
+        <Text variant="body-default-s" onBackground="neutral-medium">Cloudflare — DNS & Security</Text>
+      </Column>
+    </Column>
+  </Card>
+</Grid>
 
 ---
 
 ## Outcomes & Impact
+
+<Grid columns="3" mobileColumns="1" gap="16" marginTop="16" marginBottom="24">
+  <Card padding="32" radius="l">
+    <Column gap="12" horizontal="center">
+      <Icon name="target" size="xl" onBackground="success-medium" />
+      <Text variant="heading-strong-s">Production Ready</Text>
+      <Text variant="body-default-s" onBackground="neutral-medium">Full SaaS platform from concept to launch</Text>
+    </Column>
+  </Card>
+  <Card padding="32" radius="l">
+    <Column gap="12" horizontal="center">
+      <Icon name="shield" size="xl" onBackground="success-medium" />
+      <Text variant="heading-strong-s">Secure by Design</Text>
+      <Text variant="body-default-s" onBackground="neutral-medium">RLS policies for data isolation</Text>
+    </Column>
+  </Card>
+  <Card padding="32" radius="l">
+    <Column gap="12" horizontal="center">
+      <Icon name="trending" size="xl" onBackground="success-medium" />
+      <Text variant="heading-strong-s">Scalable Architecture</Text>
+      <Text variant="body-default-s" onBackground="neutral-medium">Built for horizontal growth</Text>
+    </Column>
+  </Card>
+</Grid>
 
 ### Product Development
 
@@ -155,33 +320,80 @@ Architected system to balance free-tier operational constraints with horizontal 
 
 ### Extension Opportunities
 
-Platform architecture supports expansion into:
-- University housing management portals
-- Corporate relocation assistance programs
-- City-specific rental marketplace ecosystems
+<Card padding="32" radius="l" marginTop="16" marginBottom="24">
+  <Column gap="16">
+    <Row gap="12" vertical="center">
+      <Icon name="globe" size="l" onBackground="brand-medium" />
+      <Text variant="heading-strong-m">Future Expansion</Text>
+    </Row>
+    <Grid columns="3" mobileColumns="1" gap="16">
+      <Column gap="8">
+        <Icon name="book" size="m" onBackground="neutral-medium" />
+        <Text variant="body-default-s">University Housing Portals</Text>
+      </Column>
+      <Column gap="8">
+        <Icon name="server" size="m" onBackground="neutral-medium" />
+        <Text variant="body-default-s">Corporate Relocation Programs</Text>
+      </Column>
+      <Column gap="8">
+        <Icon name="mapPin" size="m" onBackground="neutral-medium" />
+        <Text variant="body-default-s">City-Specific Marketplaces</Text>
+      </Column>
+    </Grid>
+  </Column>
+</Card>
 
 ---
 
 ## Project Differentiation
 
-**Production-Grade Implementation**  
-Built for real users with real constraints, incorporating monetization strategy, abuse prevention mechanisms, and pricing logic from day one.
-
-**Beyond CRUD Operations**  
-Comprehensive feature set including authentication strategy, usage tracking, automated email workflows, and UX polish typically absent from prototype projects.
-
-**Engineering Discipline**  
-Production-minded architectural decisions prioritizing maintainability, security, and scalability over rapid prototyping shortcuts.
+<Column gap="16" marginTop="16" marginBottom="24">
+  <Card padding="24" radius="l">
+    <Row gap="16" vertical="center">
+      <Icon name="check" size="l" onBackground="success-medium" />
+      <Column gap="4">
+        <Text variant="heading-strong-s">Production-Grade Implementation</Text>
+        <Text variant="body-default-s" onBackground="neutral-medium">Built for real users with real constraints, incorporating monetization strategy, abuse prevention mechanisms, and pricing logic from day one.</Text>
+      </Column>
+    </Row>
+  </Card>
+  <Card padding="24" radius="l">
+    <Row gap="16" vertical="center">
+      <Icon name="check" size="l" onBackground="success-medium" />
+      <Column gap="4">
+        <Text variant="heading-strong-s">Beyond CRUD Operations</Text>
+        <Text variant="body-default-s" onBackground="neutral-medium">Comprehensive feature set including authentication strategy, usage tracking, automated email workflows, and UX polish typically absent from prototype projects.</Text>
+      </Column>
+    </Row>
+  </Card>
+  <Card padding="24" radius="l">
+    <Row gap="16" vertical="center">
+      <Icon name="check" size="l" onBackground="success-medium" />
+      <Column gap="4">
+        <Text variant="heading-strong-s">Engineering Discipline</Text>
+        <Text variant="body-default-s" onBackground="neutral-medium">Production-minded architectural decisions prioritizing maintainability, security, and scalability over rapid prototyping shortcuts.</Text>
+      </Column>
+    </Row>
+  </Card>
+</Column>
 
 ---
 
-## Links & Resources
-
-**Live Platform:** [needaroomie.com](https://needaroomie.com)  
-**Source Code:** Available upon request (private repository)
+<Card padding="32" radius="l" marginTop="24" marginBottom="24">
+  <Column gap="16" horizontal="center">
+    <Text variant="heading-strong-l">Ready to explore the platform?</Text>
+    <Text variant="body-default-m" onBackground="neutral-medium">Check out the live project or get in touch for source code access</Text>
+    <Row gap="12" wrap>
+      <Button href="https://needaroomie.com" variant="primary" size="m" prefixIcon="globe">
+        Visit Live Platform
+      </Button>
+      <Button href="mailto:bharathanmoorthy@outlook.com" variant="secondary" size="m" prefixIcon="email">
+        Request Source Code
+      </Button>
+    </Row>
+  </Column>
+</Card>
 
 ---
 
-**Project Completed:** October 2025  
-**Development Duration:** 8 weeks  
-**Current Status:** Live in production
+**Project Completed:** October 2025 • **Duration:** 8 weeks • **Status:** Live in Production

@@ -24,6 +24,27 @@ import {
 
 import { FaDiscord, FaGithub, FaLinkedin, FaX, FaThreads } from "react-icons/fa6";
 
+import {
+  LuClock,
+  LuCode,
+  LuCircleCheckBig,
+  LuShieldCheck,
+  LuSmartphone,
+  LuUsers,
+  LuLayers,
+  LuDatabase,
+  LuCloud,
+  LuServer,
+  LuZap,
+  LuTarget,
+  LuTrendingUp,
+  LuCircleCheck,
+  LuMapPin,
+  LuCreditCard,
+  LuLayoutDashboard,
+  LuPalette,
+} from "react-icons/lu";
+
 export const iconLibrary: Record<string, IconType> = {
   arrowUpRight: HiArrowUpRight,
   arrowRight: HiArrowRight,
@@ -45,7 +66,26 @@ export const iconLibrary: Record<string, IconType> = {
   threads: FaThreads,
   arrowUpRightFromSquare: HiArrowTopRightOnSquare,
   document: HiOutlineDocument,
-  rocket: HiOutlineRocketLaunch
+  rocket: HiOutlineRocketLaunch,
+  // Lucide icons
+  clock: LuClock,
+  code: LuCode,
+  circleCheck: LuCircleCheckBig,
+  shield: LuShieldCheck,
+  smartphone: LuSmartphone,
+  users: LuUsers,
+  layers: LuLayers,
+  database: LuDatabase,
+  cloud: LuCloud,
+  server: LuServer,
+  zap: LuZap,
+  target: LuTarget,
+  trending: LuTrendingUp,
+  check: LuCircleCheck,
+  mapPin: LuMapPin,
+  creditCard: LuCreditCard,
+  layout: LuLayoutDashboard,
+  palette: LuPalette,
 };
 
 export type IconLibrary = typeof iconLibrary;
