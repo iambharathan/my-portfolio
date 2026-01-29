@@ -73,16 +73,17 @@ export default async function Project({
         <Button data-border="rounded" href="/work" variant="tertiary" weight="default" size="s" prefixIcon="chevronLeft">
           Projects
         </Button>
-        <Flex gap="12" vertical="center">
-          <Heading variant="display-strong-s">{post.metadata.title}</Heading>
+        <Flex gap="16" vertical="center" wrap horizontal="space-between">
+          <Heading variant="display-strong-s" style={{ flex: 1 }}>{post.metadata.title}</Heading>
           {post.metadata.link && (
             <Button
               href={post.metadata.link}
               target="_blank"
               rel="noopener noreferrer"
-              variant="secondary"
+              variant="primary"
               size="s"
               prefixIcon="globe"
+              style={{ color: 'black', whiteSpace: 'nowrap' }}
             >
               Live Demo
             </Button>
